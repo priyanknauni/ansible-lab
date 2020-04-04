@@ -5,7 +5,7 @@
 
   tasks:
   - name: Grab the credentials from ansible-vault
-    include_vars: 'password.yml'
+    vars: 'password.yml'
     no_log: 'no'
 
   - name: Add test rule 3 to the firewall
