@@ -1,11 +1,49 @@
 ---
-- name: Palo Alto Create Firewall Policies
-  hosts: localhost
+- hosts: localhost
   connection: local
-  gather_facts: false
- 
+  gather_facts: False
+
   tasks:
-  - name: Add Rules at Specific Location in the Rule Base
-    include_role:
-      name: create_security_policies
-      vars_from: "password.yml"
+  - name: Grab the credentials from ansible-vault
+    include_vars: 'password.yml'
+    no_log: 'yes'
+
+  - name: Add test rule 3 to the firewall
+    panos_security_rule:
+      ip_address: '{{ ip_address }}'
+      username: '{{ username }}'
+      password: '{{ password }}'
+      operation: 'add'
+      rule_name: 'Ansible Tower test 1'
+      description: 'An Ansible test rule'
+      source_zone: ['trust']
+      destination_zone: ['untrust']
+      source_ip: ['9.1.7.3']
+      source_user: ['any']
+      destination_ip: ['any']
+      category: ['any']
+      application: ['any']
+      service: ['service-http']
+      hip_profiles: ['any']
+      action: 'allow'
+      commit: 'False'
+
+  - name: Add test rule 4 to the firewall
+    panos_security_rule:
+      ip_address: '{{ ip_address }}'
+      username: '{{ username }}'
+      password: '{{ password }}'
+      operation: 'add'
+      rule_name: 'Ansible Tower test 2'
+      description: 'Another Ansible test rule'
+      source_zone: ['trust']
+      source_ip: ['192.168.100.2']
+      source_user: ['any']
+      hip_profiles: ['any']
+      destination_zone: ['untrust']
+      destination_ip: ['any']
+      category: ['any']
+      application: ['any']
+      service: ['service-https']
+      action: 'allow'
+      commit: 'False'
