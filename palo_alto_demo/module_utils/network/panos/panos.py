@@ -394,9 +394,9 @@ class ConnectionHelper(object):
         elif location == 'bottom':
             if listing[-1] != uid:
                 changed = True
-        else:
-            try:
-                ref_index = listing.index(existing_rule)
+        #else:
+            #try:
+                #ref_index = listing.index(existing_rule)
             except ValueError:
                 msg = [
                     'Cannot do relative rule placement',
