@@ -4,7 +4,7 @@
     path: roles/create_security_policies/files/firewall_policy_requirements.csv
   register: firewall_policies
 
-- name: Add rules
+- name: Adding rule
   panos_security_rule:
     provider: "{{ provider }}"
     rule_name: "{{ firewall_policies.list[item]['Rule Name'] }}"
