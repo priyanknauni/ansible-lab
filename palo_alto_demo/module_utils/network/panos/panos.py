@@ -396,7 +396,7 @@ class ConnectionHelper(object):
                 changed = True
         else:
             try:
-                #ref_index = listing.index(existing_rule)
+                ref_index = listing.index(existing_rule)
             except ValueError:
                 msg = [
                     'Cannot do relative rule placement',
