@@ -8,3 +8,8 @@
   vars:
     provider: '{"api_key": "LUFRPT12em9rcFNUSktTSHJEVHBXUTFIL2QwY1ZCa3c9NEFNNXpmUHk0dnh1TjNicndnMzVKUT09", "ip_address": "10.180.0.145"}'
 
+ tasks:
+  - name: Add Rules at Specific Location in the Rule Base
+    include_role:
+      name: create_security_policies
+      vars_from: "password.yml"
