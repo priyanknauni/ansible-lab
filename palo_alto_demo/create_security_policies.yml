@@ -6,7 +6,7 @@
   environment:
     PYTHONHTTPSVERIFY: 0
   vars:
-    provider: '{"api_key": "{{ palo_api_key }}", "ip_address": "{{ palo_fw_ip }}"}'
+    provider: '{"api_key": "LUFRPT12em9rcFNUSktTSHJEVHBXUTFIL2QwY1ZCa3c9NEFNNXpmUHk0dnh1TjNicndnMzVKUT09", "ip_address": "10.180.0.145"}'
 
   tasks:
   - name: Add Rules at Specific Location in the Rule Base
