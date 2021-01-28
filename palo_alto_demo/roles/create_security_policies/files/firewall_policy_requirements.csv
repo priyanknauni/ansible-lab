@@ -1,3 +1,3 @@
 Rule Name,Rule Description,Source Zone,Source IP,Source User,Destination Zone,Destination IP,Category,Application,Service,Action,Location,Existing Rule
-SSH Permit,SSH Rule Test,untrust,any,any,trust,10.10.30.12,any,ssh,application-default,allow,before,Block DNS Sinkhole
-Allow Web Access,Web Access Test,untrust,any,any,trust,192.168.200.160,any,web-browsing,application-default,allow,after,Allow NTP
+SSH Permit,SSH Rule Test,untrust,any,any,trust,10.10.30.13,any,ssh,application-default,allow,before,Test1
+Allow Web Access,Web Access Test,untrust,any,any,trust,192.168.200.161,any,web-browsing,application-default,allow,after,Test2
