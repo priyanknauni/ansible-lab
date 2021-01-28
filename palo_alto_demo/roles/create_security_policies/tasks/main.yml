@@ -6,7 +6,6 @@
 
 - name: Adding rule
   panos_security_rule:
-    provider: "{{ provider }}"
     rule_name: "{{ firewall_policies.list[item]['Rule Name'] }}"
     description: "{{ firewall_policies.list[item]['Rule Description'] }}"
     source_zone: ["{{ firewall_policies.list[item]['Source Zone'] }}"]
