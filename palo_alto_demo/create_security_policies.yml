@@ -10,5 +10,3 @@
 
   tasks:
   - name: Add Rules at Specific Location in the Rule Base
-    include_role:
-      name: create_security_policies
