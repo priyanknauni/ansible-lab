@@ -1,2 +1,2 @@
 [palo_alto]
-paloalto ansible_host=10.180.0.145
+paloalto ansible_host=10.180.0.51
