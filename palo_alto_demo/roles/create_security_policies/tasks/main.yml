@@ -19,5 +19,5 @@
     service: ["{{ firewall_policies.list[item]['Service'] }}"]
     action: "{{ firewall_policies.list[item]['Action'] }}"
     location: "{{ firewall_policies.list[item]['Location'] }}"
-    existing_rule: "{{ firewall_policies.list[item]['Existing Rule'] }}"
-  loop: "{{ range(0, firewall_policies | length | int - 2) | list }}"
+    #existing_rule: "{{ firewall_policies.list[item]['Existing Rule'] }}"
+  #loop: "{{ range(0, firewall_policies | length | int - 2) | list }}"
