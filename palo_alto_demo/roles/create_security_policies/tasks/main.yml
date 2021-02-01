@@ -6,6 +6,7 @@
 
 - name: Add rules at specific location in the rulebase
   panos_security_rule:
+    provider: "{{ provider }}"
     rule_name: "{{ firewall_policies.list[item]['Rule Name'] }}"
     description: "{{ firewall_policies.list[item]['Rule Description'] }}"
     source_zone: ["{{ firewall_policies.list[item]['Source Zone'] }}"]
@@ -20,3 +21,4 @@
     location: "{{ firewall_policies.list[item]['Location'] }}"
     existing_rule: "{{ firewall_policies.list[item]['Existing Rule'] }}"
   loop: "{{ range(0, firewall_policies | length | int - 2) | list }}"
+  	  
