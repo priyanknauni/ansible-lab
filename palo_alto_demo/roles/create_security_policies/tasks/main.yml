@@ -5,7 +5,7 @@
     path: roles/create_security_policies/files/firewall_policy_requirements.csv
   register: firewall_policies
 - 
-  loop: "{{ range(0, firewall_policies | length | int - 2) | list }}"
+  
   name: "Add rules at specific location in the rulebase"
   panos_security_rule: 
     action: "{{ firewall_policies.list[item]['Action'] }}"
